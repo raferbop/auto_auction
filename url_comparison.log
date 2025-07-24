@@ -1,0 +1,357 @@
+2025-07-18 09:00:42,273 - INFO - Starting URL comparison analysis...
+2025-07-18 09:00:43,089 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=count&limit=1 "HTTP/2 200 OK"
+2025-07-18 09:00:43,101 - INFO - Database connection successful
+2025-07-18 09:00:43,293 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=count "HTTP/2 200 OK"
+2025-07-18 09:00:43,305 - INFO - processed_urls table: 1 records
+2025-07-18 09:00:43,527 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=count "HTTP/2 200 OK"
+2025-07-18 09:00:43,530 - INFO - vehicle_details table: 1 records
+2025-07-18 09:00:43,734 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicles?select=count "HTTP/2 200 OK"
+2025-07-18 09:00:43,735 - INFO - vehicles table: 1 records
+2025-07-18 09:00:44,073 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A "HTTP/2 200 OK"
+2025-07-18 09:00:44,360 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A "HTTP/2 200 OK"
+2025-07-18 09:00:44,506 - INFO - Using vehicle_details table
+2025-07-18 09:00:44,509 - INFO - 
+============================================================
+2025-07-18 09:00:44,509 - INFO - URL COMPARISON ANALYSIS SUMMARY
+2025-07-18 09:00:44,509 - INFO - ============================================================
+2025-07-18 09:00:44,509 - INFO - Table Counts:
+2025-07-18 09:00:44,510 - INFO -    processed_urls: 1 records
+2025-07-18 09:00:44,510 - INFO -    vehicle_details: 1 records
+2025-07-18 09:00:44,511 - INFO -    vehicles: 1 records
+2025-07-18 09:00:44,512 - INFO - 
+URL Matching:
+2025-07-18 09:00:44,513 - INFO -    Total processed URLs: 1,000
+2025-07-18 09:00:44,513 - INFO -    Total vehicle details: 1,000
+2025-07-18 09:00:44,513 - INFO -    Matching URLs: 863
+2025-07-18 09:00:44,513 - INFO -    Missing in vehicle details: 137
+2025-07-18 09:00:44,513 - INFO -    Missing in processed URLs: 137
+2025-07-18 09:00:44,513 - INFO - 
+Processing Status:
+2025-07-18 09:00:44,513 - INFO -    Processed: 1,000
+2025-07-18 09:00:44,513 - INFO -    Unprocessed: 0
+2025-07-18 09:00:44,513 - INFO -    Failed: 0
+2025-07-18 09:00:44,513 - INFO - 
+Discrepancies Found: 274
+2025-07-18 09:00:44,515 - INFO - 
+Recommendations:
+2025-07-18 09:00:44,515 - INFO -    137 URLs are processed but missing from vehicle_details. Consider re-running the extraction process for these URLs.
+2025-07-18 09:00:44,515 - INFO -    137 vehicle details records don't have corresponding processed_urls. This might indicate data integrity issues.
+2025-07-18 09:00:44,515 - INFO - ============================================================
+2025-07-18 09:00:44,518 - INFO - Report saved to: url_comparison_report_20250718_090044.txt
+2025-07-18 09:00:44,519 - INFO - URL comparison analysis completed successfully!
+2025-07-18 09:27:37,804 - INFO - Starting URL comparison analysis...
+2025-07-18 09:27:38,548 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=count&limit=1 "HTTP/2 200 OK"
+2025-07-18 09:27:38,558 - INFO - Database connection successful
+2025-07-18 09:27:38,790 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:27:38,828 - INFO - processed_urls table: 7376 records
+2025-07-18 09:27:39,071 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:27:39,116 - INFO - vehicle_details table: 7277 records
+2025-07-18 09:27:39,237 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicles?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:27:39,274 - INFO - vehicles table: 7376 records
+2025-07-18 09:27:39,494 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=0&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:39,531 - INFO - Fetched 1000 processed_urls records so far...
+2025-07-18 09:27:39,647 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=1000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:39,691 - INFO - Fetched 2000 processed_urls records so far...
+2025-07-18 09:27:39,925 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=2000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:39,973 - INFO - Fetched 3000 processed_urls records so far...
+2025-07-18 09:27:40,239 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=3000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:40,266 - INFO - Fetched 4000 processed_urls records so far...
+2025-07-18 09:27:40,512 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=4000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:40,557 - INFO - Fetched 5000 processed_urls records so far...
+2025-07-18 09:27:40,711 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=5000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:40,743 - INFO - Fetched 6000 processed_urls records so far...
+2025-07-18 09:27:40,892 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=6000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:40,926 - INFO - Fetched 7000 processed_urls records so far...
+2025-07-18 09:27:41,143 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=7000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:41,159 - INFO - Fetched 7376 processed_urls records so far...
+2025-07-18 09:27:41,159 - INFO - Total processed_urls records fetched: 7376
+2025-07-18 09:27:41,411 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=0&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:41,463 - INFO - Fetched 1000 vehicle_details records so far...
+2025-07-18 09:27:41,675 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=1000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:41,724 - INFO - Fetched 2000 vehicle_details records so far...
+2025-07-18 09:27:41,998 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=2000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:42,058 - INFO - Fetched 3000 vehicle_details records so far...
+2025-07-18 09:27:42,256 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=3000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:42,321 - INFO - Fetched 4000 vehicle_details records so far...
+2025-07-18 09:27:42,496 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=4000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:42,541 - INFO - Fetched 5000 vehicle_details records so far...
+2025-07-18 09:27:42,797 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=5000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:42,838 - INFO - Fetched 6000 vehicle_details records so far...
+2025-07-18 09:27:42,981 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=6000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:43,039 - INFO - Fetched 7000 vehicle_details records so far...
+2025-07-18 09:27:43,173 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=7000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:27:43,177 - INFO - Fetched 7277 vehicle_details records so far...
+2025-07-18 09:27:43,177 - INFO - Using vehicle_details table - Total records: 7277
+2025-07-18 09:27:43,192 - INFO - Extracting URLs from processed_urls...
+2025-07-18 09:27:43,192 - INFO - Extracted 7376 unique URLs from processed_urls
+2025-07-18 09:27:43,192 - INFO - Extracting URLs from vehicle_details...
+2025-07-18 09:27:43,192 - INFO - Extracted 7277 unique URLs from vehicle_details
+2025-07-18 09:27:43,198 - INFO - URL matching analysis complete:
+2025-07-18 09:27:43,198 - INFO -   - Matching URLs: 7277
+2025-07-18 09:27:43,198 - INFO -   - Missing in vehicle_details: 99
+2025-07-18 09:27:43,198 - INFO -   - Missing in processed_urls: 0
+2025-07-18 09:27:43,211 - INFO - 
+============================================================
+2025-07-18 09:27:43,211 - INFO - URL COMPARISON ANALYSIS SUMMARY
+2025-07-18 09:27:43,211 - INFO - ============================================================
+2025-07-18 09:27:43,211 - INFO - Table Counts:
+2025-07-18 09:27:43,211 - INFO -    processed_urls: 7,376 records
+2025-07-18 09:27:43,211 - INFO -    vehicle_details: 7,277 records
+2025-07-18 09:27:43,211 - INFO -    vehicles: 7,376 records
+2025-07-18 09:27:43,211 - INFO - 
+URL Matching:
+2025-07-18 09:27:43,211 - INFO -    Total processed URLs: 7,376
+2025-07-18 09:27:43,211 - INFO -    Total vehicle details: 7,277
+2025-07-18 09:27:43,211 - INFO -    Matching URLs: 7,277
+2025-07-18 09:27:43,211 - INFO -    Missing in vehicle details: 99
+2025-07-18 09:27:43,211 - INFO -    Missing in processed URLs: 0
+2025-07-18 09:27:43,211 - INFO - 
+Processing Status:
+2025-07-18 09:27:43,211 - INFO -    Processed: 7,376
+2025-07-18 09:27:43,211 - INFO -    Unprocessed: 0
+2025-07-18 09:27:43,211 - INFO -    Failed: 0
+2025-07-18 09:27:43,211 - INFO - 
+Discrepancies Found: 99
+2025-07-18 09:27:43,211 - INFO - 
+Recommendations:
+2025-07-18 09:27:43,211 - INFO -    99 URLs are processed but missing from vehicle_details. Consider re-running the extraction process for these URLs.
+2025-07-18 09:27:43,211 - INFO - ============================================================
+2025-07-18 09:27:43,226 - INFO - Report saved to: url_comparison_report_20250718_092743.txt
+2025-07-18 09:27:43,226 - INFO - URL comparison analysis completed successfully!
+2025-07-18 09:30:40,364 - INFO - Starting URL comparison analysis...
+2025-07-18 09:30:40,966 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=count&limit=1 "HTTP/2 200 OK"
+2025-07-18 09:30:40,969 - INFO - Database connection successful
+2025-07-18 09:30:41,107 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:30:41,149 - INFO - processed_urls table: 7376 records
+2025-07-18 09:30:41,392 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:30:41,444 - INFO - vehicle_details table: 7277 records
+2025-07-18 09:30:41,677 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicles?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:30:41,724 - INFO - vehicles table: 7376 records
+2025-07-18 09:30:41,959 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=0&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:41,994 - INFO - Fetched 1000 processed_urls records so far...
+2025-07-18 09:30:42,219 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=1000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:42,252 - INFO - Fetched 2000 processed_urls records so far...
+2025-07-18 09:30:42,402 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=2000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:42,450 - INFO - Fetched 3000 processed_urls records so far...
+2025-07-18 09:30:42,683 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=3000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:42,721 - INFO - Fetched 4000 processed_urls records so far...
+2025-07-18 09:30:42,869 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=4000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:42,907 - INFO - Fetched 5000 processed_urls records so far...
+2025-07-18 09:30:43,129 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=5000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:43,167 - INFO - Fetched 6000 processed_urls records so far...
+2025-07-18 09:30:43,297 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=6000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:43,347 - INFO - Fetched 7000 processed_urls records so far...
+2025-07-18 09:30:43,547 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=7000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:43,566 - INFO - Fetched 7376 processed_urls records so far...
+2025-07-18 09:30:43,566 - INFO - Total processed_urls records fetched: 7376
+2025-07-18 09:30:43,680 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=0&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:43,735 - INFO - Fetched 1000 vehicle_details records so far...
+2025-07-18 09:30:43,980 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=1000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:44,032 - INFO - Fetched 2000 vehicle_details records so far...
+2025-07-18 09:30:44,297 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=2000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:44,356 - INFO - Fetched 3000 vehicle_details records so far...
+2025-07-18 09:30:44,513 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=3000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:44,548 - INFO - Fetched 4000 vehicle_details records so far...
+2025-07-18 09:30:44,680 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=4000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:44,733 - INFO - Fetched 5000 vehicle_details records so far...
+2025-07-18 09:30:44,914 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=5000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:44,950 - INFO - Fetched 6000 vehicle_details records so far...
+2025-07-18 09:30:45,113 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=6000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:45,167 - INFO - Fetched 7000 vehicle_details records so far...
+2025-07-18 09:30:45,263 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=7000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:30:45,280 - INFO - Fetched 7277 vehicle_details records so far...
+2025-07-18 09:30:45,280 - INFO - Using vehicle_details table - Total records: 7277
+2025-07-18 09:30:45,280 - INFO - Extracting URLs from processed_urls...
+2025-07-18 09:30:45,290 - INFO - Extracted 7376 unique URLs from processed_urls
+2025-07-18 09:30:45,290 - INFO - Extracting URLs from vehicle_details...
+2025-07-18 09:30:45,290 - INFO - Extracted 7277 unique URLs from vehicle_details
+2025-07-18 09:30:45,290 - INFO - URL matching analysis complete:
+2025-07-18 09:30:45,290 - INFO -   - Matching URLs: 7277
+2025-07-18 09:30:45,290 - INFO -   - Missing in vehicle_details: 99
+2025-07-18 09:30:45,290 - INFO -   - Missing in processed_urls: 0
+2025-07-18 09:30:45,299 - INFO - 
+============================================================
+2025-07-18 09:30:45,299 - INFO - URL COMPARISON ANALYSIS SUMMARY
+2025-07-18 09:30:45,299 - INFO - ============================================================
+2025-07-18 09:30:45,299 - INFO - Table Counts:
+2025-07-18 09:30:45,299 - INFO -    processed_urls: 7,376 records
+2025-07-18 09:30:45,299 - INFO -    vehicle_details: 7,277 records
+2025-07-18 09:30:45,299 - INFO -    vehicles: 7,376 records
+2025-07-18 09:30:45,299 - INFO - 
+URL Matching:
+2025-07-18 09:30:45,299 - INFO -    Total processed URLs: 7,376
+2025-07-18 09:30:45,299 - INFO -    Total vehicle details: 7,277
+2025-07-18 09:30:45,299 - INFO -    Matching URLs: 7,277
+2025-07-18 09:30:45,299 - INFO -    Missing in vehicle details: 99
+2025-07-18 09:30:45,299 - INFO -    Missing in processed URLs: 0
+2025-07-18 09:30:45,299 - INFO - 
+Processing Status:
+2025-07-18 09:30:45,299 - INFO -    Processed: 7,376
+2025-07-18 09:30:45,299 - INFO -    Unprocessed: 0
+2025-07-18 09:30:45,299 - INFO -    Failed: 0
+2025-07-18 09:30:45,299 - INFO - 
+Discrepancies Found: 99
+2025-07-18 09:30:45,299 - INFO - 
+Recommendations:
+2025-07-18 09:30:45,299 - INFO -    99 URLs are processed but missing from vehicle_details. Consider re-running the extraction process for these URLs.
+2025-07-18 09:30:45,312 - INFO - ============================================================
+2025-07-18 09:30:45,319 - INFO - Report saved to: url_comparison_report_20250718_093045.txt
+2025-07-18 09:30:45,319 - INFO - URL comparison analysis completed successfully!
+2025-07-18 09:38:32,403 - INFO - Starting URL comparison analysis...
+2025-07-18 09:38:33,015 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=count&limit=1 "HTTP/2 200 OK"
+2025-07-18 09:38:33,019 - INFO - Database connection successful
+2025-07-18 09:38:33,170 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:38:33,204 - INFO - processed_urls table: 7376 records
+2025-07-18 09:38:33,393 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:38:33,431 - INFO - vehicle_details table: 7277 records
+2025-07-18 09:38:33,595 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicles?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:38:33,630 - INFO - vehicles table: 7376 records
+2025-07-18 09:38:33,774 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=0&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:33,816 - INFO - Fetched 1000 processed_urls records so far...
+2025-07-18 09:38:33,925 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=1000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:33,931 - INFO - Fetched 2000 processed_urls records so far...
+2025-07-18 09:38:34,054 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=2000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:34,054 - INFO - Fetched 3000 processed_urls records so far...
+2025-07-18 09:38:34,220 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=3000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:34,257 - INFO - Fetched 4000 processed_urls records so far...
+2025-07-18 09:38:34,370 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=4000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:34,370 - INFO - Fetched 5000 processed_urls records so far...
+2025-07-18 09:38:34,503 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=5000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:34,556 - INFO - Fetched 6000 processed_urls records so far...
+2025-07-18 09:38:34,703 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=6000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:34,744 - INFO - Fetched 7000 processed_urls records so far...
+2025-07-18 09:38:34,953 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=7000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:34,968 - INFO - Fetched 7376 processed_urls records so far...
+2025-07-18 09:38:34,970 - INFO - Total processed_urls records fetched: 7376
+2025-07-18 09:38:35,138 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=0&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:35,176 - INFO - Fetched 1000 vehicle_details records so far...
+2025-07-18 09:38:35,362 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=1000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:35,407 - INFO - Fetched 2000 vehicle_details records so far...
+2025-07-18 09:38:35,588 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=2000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:35,624 - INFO - Fetched 3000 vehicle_details records so far...
+2025-07-18 09:38:35,786 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=3000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:35,840 - INFO - Fetched 4000 vehicle_details records so far...
+2025-07-18 09:38:36,003 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=4000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:36,055 - INFO - Fetched 5000 vehicle_details records so far...
+2025-07-18 09:38:36,203 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=5000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:36,260 - INFO - Fetched 6000 vehicle_details records so far...
+2025-07-18 09:38:36,419 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=6000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:36,471 - INFO - Fetched 7000 vehicle_details records so far...
+2025-07-18 09:38:36,619 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=7000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:38:36,619 - INFO - Fetched 7277 vehicle_details records so far...
+2025-07-18 09:38:36,619 - INFO - Using vehicle_details table - Total records: 7277
+2025-07-18 09:38:36,619 - INFO - Extracting URLs from processed_urls...
+2025-07-18 09:38:36,636 - INFO - Extracted 7376 unique URLs from processed_urls
+2025-07-18 09:38:36,637 - INFO - Extracting URLs from vehicle_details...
+2025-07-18 09:38:36,639 - INFO - Extracted 7277 unique URLs from vehicle_details
+2025-07-18 09:38:36,641 - INFO - URL matching analysis complete:
+2025-07-18 09:38:36,641 - INFO -   - Matching URLs: 7277
+2025-07-18 09:38:36,641 - INFO -   - Missing in vehicle_details: 99
+2025-07-18 09:38:36,641 - INFO -   - Missing in processed_urls: 0
+2025-07-18 09:38:36,654 - INFO - 
+============================================================
+2025-07-18 09:38:36,654 - INFO - URL COMPARISON ANALYSIS SUMMARY
+2025-07-18 09:38:36,655 - INFO - ============================================================
+2025-07-18 09:38:36,655 - INFO - Table Counts:
+2025-07-18 09:38:36,655 - INFO -    processed_urls: 7,376 records
+2025-07-18 09:38:36,655 - INFO -    vehicle_details: 7,277 records
+2025-07-18 09:38:36,656 - INFO -    vehicles: 7,376 records
+2025-07-18 09:38:36,656 - INFO - 
+URL Matching:
+2025-07-18 09:38:36,656 - INFO -    Total processed URLs: 7,376
+2025-07-18 09:38:36,656 - INFO -    Total vehicle details: 7,277
+2025-07-18 09:38:36,656 - INFO -    Matching URLs: 7,277
+2025-07-18 09:38:36,656 - INFO -    Missing in vehicle details: 99
+2025-07-18 09:38:36,656 - INFO -    Missing in processed URLs: 0
+2025-07-18 09:38:36,656 - INFO - 
+Processing Status:
+2025-07-18 09:38:36,656 - INFO -    Processed: 7,376
+2025-07-18 09:38:36,656 - INFO -    Unprocessed: 0
+2025-07-18 09:38:36,656 - INFO -    Failed: 0
+2025-07-18 09:38:36,656 - INFO - 
+Discrepancies Found: 99
+2025-07-18 09:38:36,658 - INFO - 
+Recommendations:
+2025-07-18 09:38:36,658 - INFO -    99 URLs are processed but missing from vehicle_details. Consider re-running the extraction process for these URLs.
+2025-07-18 09:38:36,658 - INFO - ============================================================
+2025-07-18 09:38:36,660 - INFO - Report saved to: url_comparison_report_20250718_093836.txt
+2025-07-18 09:38:36,668 - INFO - URL comparison analysis completed successfully!
+2025-07-18 09:42:16,095 - INFO - Starting URL comparison analysis...
+2025-07-18 09:42:16,626 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=count&limit=1 "HTTP/2 200 OK"
+2025-07-18 09:42:16,630 - INFO - Database connection successful
+2025-07-18 09:42:16,849 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:42:16,883 - INFO - processed_urls table: 7376 records
+2025-07-18 09:42:17,060 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:42:17,110 - INFO - vehicle_details table: 7277 records
+2025-07-18 09:42:17,262 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicles?select=%2A "HTTP/2 206 Partial Content"
+2025-07-18 09:42:17,303 - INFO - vehicles table: 7376 records
+2025-07-18 09:42:17,520 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=0&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:17,560 - INFO - Fetched 1000 processed_urls records so far...
+2025-07-18 09:42:17,703 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=1000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:17,743 - INFO - Fetched 2000 processed_urls records so far...
+2025-07-18 09:42:17,880 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=2000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:17,930 - INFO - Fetched 3000 processed_urls records so far...
+2025-07-18 09:42:18,094 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=3000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:18,113 - INFO - Fetched 4000 processed_urls records so far...
+2025-07-18 09:42:18,259 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=4000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:18,295 - INFO - Fetched 5000 processed_urls records so far...
+2025-07-18 09:42:18,524 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=5000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:18,561 - INFO - Fetched 6000 processed_urls records so far...
+2025-07-18 09:42:18,696 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=6000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:18,743 - INFO - Fetched 7000 processed_urls records so far...
+2025-07-18 09:42:18,880 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/processed_urls?select=%2A&offset=7000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:18,880 - INFO - Fetched 7376 processed_urls records so far...
+2025-07-18 09:42:18,880 - INFO - Total processed_urls records fetched: 7376
+2025-07-18 09:42:19,046 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=0&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:19,093 - INFO - Fetched 1000 vehicle_details records so far...
+2025-07-18 09:42:19,214 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=1000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:19,259 - INFO - Fetched 2000 vehicle_details records so far...
+2025-07-18 09:42:19,380 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=2000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:19,427 - INFO - Fetched 3000 vehicle_details records so far...
+2025-07-18 09:42:19,578 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=3000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:19,633 - INFO - Fetched 4000 vehicle_details records so far...
+2025-07-18 09:42:19,791 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=4000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:19,828 - INFO - Fetched 5000 vehicle_details records so far...
+2025-07-18 09:42:19,991 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=5000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:20,041 - INFO - Fetched 6000 vehicle_details records so far...
+2025-07-18 09:42:20,157 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=6000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:20,178 - INFO - Fetched 7000 vehicle_details records so far...
+2025-07-18 09:42:20,327 - INFO - HTTP Request: GET https://lszhrgyiwekndcsnibcj.supabase.co/rest/v1/vehicle_details?select=%2A&offset=7000&limit=1000 "HTTP/2 200 OK"
+2025-07-18 09:42:20,345 - INFO - Fetched 7277 vehicle_details records so far...
+2025-07-18 09:42:20,346 - INFO - Using vehicle_details table - Total records: 7277
+2025-07-18 09:42:20,346 - INFO - Extracting URLs from processed_urls...
+2025-07-18 09:42:20,350 - INFO - Extracted 7376 unique URLs from processed_urls
+2025-07-18 09:42:20,350 - INFO - Extracting URLs from vehicle_details...
+2025-07-18 09:42:20,353 - INFO - Extracted 7277 unique URLs from vehicle_details
+2025-07-18 09:42:20,355 - INFO - URL matching analysis complete:
+2025-07-18 09:42:20,356 - INFO -   - Matching URLs: 7277
+2025-07-18 09:42:20,357 - INFO -   - Missing in vehicle_details: 99
+2025-07-18 09:42:20,357 - INFO -   - Missing in processed_urls: 0
+2025-07-18 09:42:20,372 - INFO - 
+============================================================
+2025-07-18 09:42:20,372 - INFO - URL COMPARISON ANALYSIS SUMMARY
+2025-07-18 09:42:20,372 - INFO - ============================================================
+2025-07-18 09:42:20,373 - INFO - Table Counts:
+2025-07-18 09:42:20,374 - INFO -    processed_urls: 7,376 records
+2025-07-18 09:42:20,375 - INFO -    vehicle_details: 7,277 records
+2025-07-18 09:42:20,377 - INFO -    vehicles: 7,376 records
+2025-07-18 09:42:20,377 - INFO - 
+URL Matching:
+2025-07-18 09:42:20,378 - INFO -    Total processed URLs: 7,376
+2025-07-18 09:42:20,378 - INFO -    Total vehicle details: 7,277
+2025-07-18 09:42:20,378 - INFO -    Matching URLs: 7,277
+2025-07-18 09:42:20,378 - INFO -    Missing in vehicle details: 99
+2025-07-18 09:42:20,378 - INFO -    Missing in processed URLs: 0
+2025-07-18 09:42:20,378 - INFO - 
+Processing Status:
+2025-07-18 09:42:20,379 - INFO -    Processed: 7,376
+2025-07-18 09:42:20,379 - INFO -    Unprocessed: 0
+2025-07-18 09:42:20,379 - INFO -    Failed: 0
+2025-07-18 09:42:20,379 - INFO - 
+Discrepancies Found: 99
+2025-07-18 09:42:20,379 - INFO - 
+Recommendations:
+2025-07-18 09:42:20,379 - INFO -    99 URLs are processed but missing from vehicle_details. Consider re-running the extraction process for these URLs.
+2025-07-18 09:42:20,381 - INFO - ============================================================
+2025-07-18 09:42:20,398 - INFO - Report saved to: url_comparison_report_20250718_094220.txt
+2025-07-18 09:42:20,398 - INFO - URL comparison analysis completed successfully!

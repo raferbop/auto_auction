@@ -1,0 +1,1161 @@
+URL COMPARISON ANALYSIS REPORT
+==================================================
+Generated: 2025-07-18T09:42:16.095608
+
+SUMMARY
+--------------------
+processed_urls: 7,376 records
+vehicle_details: 7,277 records
+vehicles: 7,376 records
+
+DETAILED ANALYSIS
+--------------------
+Total processed URLs: 7,376
+Total vehicle details: 7,277
+Matching URLs: 7,277
+Missing in vehicle details: 99
+Missing in processed URLs: 0
+
+SITE DISTRIBUTION
+--------------------
+Zen Autoworks:
+  Processed URLs: 2,380
+  Vehicle Details: 0
+  Processed: 2,380
+  Unprocessed: 0
+  Failed: 0
+
+Japan Car Auc:
+  Processed URLs: 907
+  Vehicle Details: 0
+  Processed: 907
+  Unprocessed: 0
+  Failed: 0
+
+Zervtek:
+  Processed URLs: 1,034
+  Vehicle Details: 0
+  Processed: 1,034
+  Unprocessed: 0
+  Failed: 0
+
+Manga Auto Import:
+  Processed URLs: 1,891
+  Vehicle Details: 0
+  Processed: 1,891
+  Unprocessed: 0
+  Failed: 0
+
+AutoPacific:
+  Processed URLs: 1,164
+  Vehicle Details: 0
+  Processed: 1,164
+  Unprocessed: 0
+  Failed: 0
+
+unknown:
+  Processed URLs: 0
+  Vehicle Details: 7,277
+  Processed: 0
+  Unprocessed: 0
+  Failed: 0
+
+DISCREPANCIES
+--------------------
+1. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22434
+   URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963616946&s
+   Site: AutoPacific
+   Processed: True
+   Created: 2025-07-17T12:05:12.439799+00:00
+
+2. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22440
+   URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963521949&s
+   Site: AutoPacific
+   Processed: True
+   Created: 2025-07-17T12:05:14.220491+00:00
+
+3. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22442
+   URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963621624&s
+   Site: AutoPacific
+   Processed: True
+   Created: 2025-07-17T12:05:14.816306+00:00
+
+4. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22454
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963587281&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:19.187664+00:00
+
+5. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22436
+   URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963599808&s
+   Site: AutoPacific
+   Processed: True
+   Created: 2025-07-17T12:05:13.031936+00:00
+
+6. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 27392
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963596676&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:53:48.833096+00:00
+
+7. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22452
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963587606&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:18.590586+00:00
+
+8. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22431
+   URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963593388&s
+   Site: AutoPacific
+   Processed: True
+   Created: 2025-07-17T12:05:11.542281+00:00
+
+9. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22438
+   URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963617137&s
+   Site: AutoPacific
+   Processed: True
+   Created: 2025-07-17T12:05:13.634723+00:00
+
+10. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22444
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963633582&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:16.168331+00:00
+
+11. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22460
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963625252&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:21.037856+00:00
+
+12. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22472
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963504670&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:24.607548+00:00
+
+13. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22456
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963587610&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:19.819712+00:00
+
+14. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22458
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963587617&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:20.413585+00:00
+
+15. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22463
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963628643&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:21.922228+00:00
+
+16. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 25383
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963610571&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:30:48.292719+00:00
+
+17. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22469
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963504463&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:23.757635+00:00
+
+18. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22448
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963592918&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:17.385693+00:00
+
+19. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22474
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963522567&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:25.189998+00:00
+
+20. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22465
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963547687&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:22.498268+00:00
+
+21. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22450
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963595689&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:17.997604+00:00
+
+22. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22467
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963567694&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:23.08453+00:00
+
+23. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22476
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617320&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:25.775208+00:00
+
+24. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22477
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963547978&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:26.064764+00:00
+
+25. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22478
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550065&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:26.337385+00:00
+
+26. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22479
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550191&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:26.645994+00:00
+
+27. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22480
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550634&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:26.927367+00:00
+
+28. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22482
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550681&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:27.470486+00:00
+
+29. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22484
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963566363&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:28.031323+00:00
+
+30. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22485
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617332&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:28.303575+00:00
+
+31. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22475
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963621583&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:25.470947+00:00
+
+32. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22486
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963590378&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:28.613494+00:00
+
+33. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22487
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963591214&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:28.879021+00:00
+
+34. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22488
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963591243&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:29.182738+00:00
+
+35. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22489
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963591302&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:29.467357+00:00
+
+36. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22490
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963593224&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:29.764153+00:00
+
+37. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22491
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963593286&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:30.032779+00:00
+
+38. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22492
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963633084&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:30.326625+00:00
+
+39. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22495
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963595984&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:31.202772+00:00
+
+40. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22483
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963566215&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:27.742805+00:00
+
+41. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22496
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963634854&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:31.459765+00:00
+
+42. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22498
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963621585&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:32.027686+00:00
+
+43. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22499
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963629731&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:32.31104+00:00
+
+44. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22500
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963629631&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:32.582425+00:00
+
+45. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22501
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617436&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:32.866648+00:00
+
+46. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22502
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963629628&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:33.135558+00:00
+
+47. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22504
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617427&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:33.767266+00:00
+
+48. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 27393
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963628584&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:53:49.188639+00:00
+
+49. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22493
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963595399&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:30.620989+00:00
+
+50. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22505
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617455&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:34.052608+00:00
+
+51. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22506
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963619062&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:34.322259+00:00
+
+52. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22507
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963631827&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:34.622316+00:00
+
+53. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22508
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617408&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:34.921704+00:00
+
+54. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22510
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963599906&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:35.511441+00:00
+
+55. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22511
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963599903&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:35.798813+00:00
+
+56. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22513
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963609626&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:36.355545+00:00
+
+57. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22516
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604942&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:37.232808+00:00
+
+58. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22517
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963598348&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:37.530303+00:00
+
+59. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22503
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963600485&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:33.42025+00:00
+
+60. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22518
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616820&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:37.793783+00:00
+
+61. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22519
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604929&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:38.062483+00:00
+
+62. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22520
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604926&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:38.349624+00:00
+
+63. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22521
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604913&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:38.642925+00:00
+
+64. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22509
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963571448&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:35.207154+00:00
+
+65. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22515
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604945&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:36.945735+00:00
+
+66. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22523
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616949&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:39.293615+00:00
+
+67. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22526
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963610803&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:40.173289+00:00
+
+68. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22522
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616942&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:38.926095+00:00
+
+69. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 27394
+   URL: https://auc.mangaautoimport.ca/auctions/?p=project/lot&id=963503768&s
+   Site: Manga Auto Import
+   Processed: True
+   Created: 2025-07-17T12:53:49.63443+00:00
+
+70. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22527
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616803&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:40.465375+00:00
+
+71. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22529
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963607912&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:41.020431+00:00
+
+72. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22530
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963602043&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:41.304601+00:00
+
+73. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22531
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963602044&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:41.614956+00:00
+
+74. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22532
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963602033&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:41.905211+00:00
+
+75. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22533
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616928&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:42.181013+00:00
+
+76. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22535
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616927&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:42.753904+00:00
+
+77. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22525
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616936&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:39.883862+00:00
+
+78. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22536
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616921&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:43.041338+00:00
+
+79. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22537
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616910&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:43.331154+00:00
+
+80. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22538
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963602008&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:43.602877+00:00
+
+81. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22540
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963603220&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:44.181211+00:00
+
+82. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22541
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963603223&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:44.465963+00:00
+
+83. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22543
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963595393&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:53.174442+00:00
+
+84. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22545
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963629915&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:53.902419+00:00
+
+85. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22534
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616922&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:42.470074+00:00
+
+86. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22542
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963635708&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:52.774724+00:00
+
+87. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22546
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963629727&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:54.235385+00:00
+
+88. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22547
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963621743&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:54.555381+00:00
+
+89. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22548
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963621600&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:54.901922+00:00
+
+90. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22549
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963619236&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:55.25873+00:00
+
+91. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22550
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963629644&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:55.610044+00:00
+
+92. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22551
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963629728&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:55.994831+00:00
+
+93. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22552
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963619038&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:56.315803+00:00
+
+94. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22544
+   URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963600582&s
+   Site: Zervtek
+   Processed: True
+   Created: 2025-07-17T12:05:53.537754+00:00
+
+95. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22481
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550665&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:27.202408+00:00
+
+96. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22494
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963595400&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:30.924428+00:00
+
+97. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22512
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963599876&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:36.084762+00:00
+
+98. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22528
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604868&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:40.742976+00:00
+
+99. missing_vehicle_details: URL is in processed_urls but missing from vehicle_details
+   ID: 22539
+   URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963607878&s
+   Site: Zen Autoworks
+   Processed: True
+   Created: 2025-07-17T12:05:43.894279+00:00
+
+
+MISSING URLS FROM VEHICLE_DETAILS
+----------------------------------------
+Total missing URLs: 99
+
+  1. ID: 22434 | Processed: True
+     URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963616946&s
+     Site: AutoPacific
+
+  2. ID: 22440 | Processed: True
+     URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963521949&s
+     Site: AutoPacific
+
+  3. ID: 22442 | Processed: True
+     URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963621624&s
+     Site: AutoPacific
+
+  4. ID: 22454 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963587281&s
+     Site: Zen Autoworks
+
+  5. ID: 22436 | Processed: True
+     URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963599808&s
+     Site: AutoPacific
+
+  6. ID: 27392 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963596676&s
+     Site: Zervtek
+
+  7. ID: 22452 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963587606&s
+     Site: Zen Autoworks
+
+  8. ID: 22431 | Processed: True
+     URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963593388&s
+     Site: AutoPacific
+
+  9. ID: 22438 | Processed: True
+     URL: https://auction.pacificcoastjdm.com/auctions/?p=project/lot&id=963617137&s
+     Site: AutoPacific
+
+ 10. ID: 22444 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963633582&s
+     Site: Zen Autoworks
+
+ 11. ID: 22460 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963625252&s
+     Site: Zen Autoworks
+
+ 12. ID: 22472 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963504670&s
+     Site: Zen Autoworks
+
+ 13. ID: 22456 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963587610&s
+     Site: Zen Autoworks
+
+ 14. ID: 22458 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963587617&s
+     Site: Zen Autoworks
+
+ 15. ID: 22463 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963628643&s
+     Site: Zen Autoworks
+
+ 16. ID: 25383 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963610571&s
+     Site: Zen Autoworks
+
+ 17. ID: 22469 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963504463&s
+     Site: Zen Autoworks
+
+ 18. ID: 22448 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963592918&s
+     Site: Zen Autoworks
+
+ 19. ID: 22474 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963522567&s
+     Site: Zen Autoworks
+
+ 20. ID: 22465 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963547687&s
+     Site: Zen Autoworks
+
+ 21. ID: 22450 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963595689&s
+     Site: Zen Autoworks
+
+ 22. ID: 22467 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963567694&s
+     Site: Zen Autoworks
+
+ 23. ID: 22476 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617320&s
+     Site: Zen Autoworks
+
+ 24. ID: 22477 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963547978&s
+     Site: Zen Autoworks
+
+ 25. ID: 22478 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550065&s
+     Site: Zen Autoworks
+
+ 26. ID: 22479 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550191&s
+     Site: Zen Autoworks
+
+ 27. ID: 22480 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550634&s
+     Site: Zen Autoworks
+
+ 28. ID: 22482 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550681&s
+     Site: Zen Autoworks
+
+ 29. ID: 22484 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963566363&s
+     Site: Zen Autoworks
+
+ 30. ID: 22485 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617332&s
+     Site: Zen Autoworks
+
+ 31. ID: 22475 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963621583&s
+     Site: Zen Autoworks
+
+ 32. ID: 22486 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963590378&s
+     Site: Zen Autoworks
+
+ 33. ID: 22487 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963591214&s
+     Site: Zen Autoworks
+
+ 34. ID: 22488 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963591243&s
+     Site: Zen Autoworks
+
+ 35. ID: 22489 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963591302&s
+     Site: Zen Autoworks
+
+ 36. ID: 22490 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963593224&s
+     Site: Zen Autoworks
+
+ 37. ID: 22491 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963593286&s
+     Site: Zen Autoworks
+
+ 38. ID: 22492 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963633084&s
+     Site: Zen Autoworks
+
+ 39. ID: 22495 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963595984&s
+     Site: Zen Autoworks
+
+ 40. ID: 22483 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963566215&s
+     Site: Zen Autoworks
+
+ 41. ID: 22496 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963634854&s
+     Site: Zen Autoworks
+
+ 42. ID: 22498 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963621585&s
+     Site: Zen Autoworks
+
+ 43. ID: 22499 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963629731&s
+     Site: Zen Autoworks
+
+ 44. ID: 22500 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963629631&s
+     Site: Zen Autoworks
+
+ 45. ID: 22501 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617436&s
+     Site: Zen Autoworks
+
+ 46. ID: 22502 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963629628&s
+     Site: Zen Autoworks
+
+ 47. ID: 22504 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617427&s
+     Site: Zen Autoworks
+
+ 48. ID: 27393 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963628584&s
+     Site: Zervtek
+
+ 49. ID: 22493 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963595399&s
+     Site: Zen Autoworks
+
+ 50. ID: 22505 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617455&s
+     Site: Zen Autoworks
+
+ 51. ID: 22506 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963619062&s
+     Site: Zen Autoworks
+
+ 52. ID: 22507 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963631827&s
+     Site: Zen Autoworks
+
+ 53. ID: 22508 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963617408&s
+     Site: Zen Autoworks
+
+ 54. ID: 22510 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963599906&s
+     Site: Zen Autoworks
+
+ 55. ID: 22511 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963599903&s
+     Site: Zen Autoworks
+
+ 56. ID: 22513 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963609626&s
+     Site: Zen Autoworks
+
+ 57. ID: 22516 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604942&s
+     Site: Zen Autoworks
+
+ 58. ID: 22517 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963598348&s
+     Site: Zen Autoworks
+
+ 59. ID: 22503 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963600485&s
+     Site: Zen Autoworks
+
+ 60. ID: 22518 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616820&s
+     Site: Zen Autoworks
+
+ 61. ID: 22519 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604929&s
+     Site: Zen Autoworks
+
+ 62. ID: 22520 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604926&s
+     Site: Zen Autoworks
+
+ 63. ID: 22521 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604913&s
+     Site: Zen Autoworks
+
+ 64. ID: 22509 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963571448&s
+     Site: Zen Autoworks
+
+ 65. ID: 22515 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604945&s
+     Site: Zen Autoworks
+
+ 66. ID: 22523 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616949&s
+     Site: Zen Autoworks
+
+ 67. ID: 22526 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963610803&s
+     Site: Zen Autoworks
+
+ 68. ID: 22522 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616942&s
+     Site: Zen Autoworks
+
+ 69. ID: 27394 | Processed: True
+     URL: https://auc.mangaautoimport.ca/auctions/?p=project/lot&id=963503768&s
+     Site: Manga Auto Import
+
+ 70. ID: 22527 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616803&s
+     Site: Zen Autoworks
+
+ 71. ID: 22529 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963607912&s
+     Site: Zen Autoworks
+
+ 72. ID: 22530 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963602043&s
+     Site: Zen Autoworks
+
+ 73. ID: 22531 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963602044&s
+     Site: Zen Autoworks
+
+ 74. ID: 22532 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963602033&s
+     Site: Zen Autoworks
+
+ 75. ID: 22533 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616928&s
+     Site: Zen Autoworks
+
+ 76. ID: 22535 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616927&s
+     Site: Zen Autoworks
+
+ 77. ID: 22525 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616936&s
+     Site: Zen Autoworks
+
+ 78. ID: 22536 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616921&s
+     Site: Zen Autoworks
+
+ 79. ID: 22537 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616910&s
+     Site: Zen Autoworks
+
+ 80. ID: 22538 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963602008&s
+     Site: Zen Autoworks
+
+ 81. ID: 22540 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963603220&s
+     Site: Zen Autoworks
+
+ 82. ID: 22541 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963603223&s
+     Site: Zen Autoworks
+
+ 83. ID: 22543 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963595393&s
+     Site: Zervtek
+
+ 84. ID: 22545 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963629915&s
+     Site: Zervtek
+
+ 85. ID: 22534 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963616922&s
+     Site: Zen Autoworks
+
+ 86. ID: 22542 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963635708&s
+     Site: Zervtek
+
+ 87. ID: 22546 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963629727&s
+     Site: Zervtek
+
+ 88. ID: 22547 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963621743&s
+     Site: Zervtek
+
+ 89. ID: 22548 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963621600&s
+     Site: Zervtek
+
+ 90. ID: 22549 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963619236&s
+     Site: Zervtek
+
+ 91. ID: 22550 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963629644&s
+     Site: Zervtek
+
+ 92. ID: 22551 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963629728&s
+     Site: Zervtek
+
+ 93. ID: 22552 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963619038&s
+     Site: Zervtek
+
+ 94. ID: 22544 | Processed: True
+     URL: https://auctions.zervtek.com/auctions/?p=project/lot&id=963600582&s
+     Site: Zervtek
+
+ 95. ID: 22481 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963550665&s
+     Site: Zen Autoworks
+
+ 96. ID: 22494 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963595400&s
+     Site: Zen Autoworks
+
+ 97. ID: 22512 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963599876&s
+     Site: Zen Autoworks
+
+ 98. ID: 22528 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963604868&s
+     Site: Zen Autoworks
+
+ 99. ID: 22539 | Processed: True
+     URL: https://auction.zenautoworks.ca/auctions/?p=project/lot&id=963607878&s
+     Site: Zen Autoworks
+
+RECOMMENDATIONS
+--------------------
+• 99 URLs are processed but missing from vehicle_details. Consider re-running the extraction process for these URLs.
