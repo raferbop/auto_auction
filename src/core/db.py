@@ -627,6 +627,101 @@ class DatabaseHandler:
             self.logger.error(f"Error getting manufacturers: {e}")
             return []
     
+    async def save_sales_data_batch(self, sales_records: List[Dict]) -> bool:
+        """
+        Save multiple sales data records in batch for better performance.
+        
+        Args:
+            sales_records: List of dictionaries containing sales data
+            
+        Returns:
+            bool: True if all records saved successfully, False otherwise
+        """
+        try:
+            if not sales_records:
+                return True
+            
+            # Truncate string fields to avoid "value too long" errors
+            def truncate_string(value, max_length=50):
+                if isinstance(value, str) and len(value) > max_length:
+                    return value[:max_length]
+                return value
+            
+            # Prepare batch data for vehicle_sales table
+            vehicle_sales_batch = []
+            processed_urls_batch = []
+            
+            for sales_record in sales_records:
+                # Prepare the data for the vehicle_sales table
+                vehicle_sales_data = {
+                    "site_name": truncate_string(sales_record.get("site_name")),
+                    "lot_number": truncate_string(sales_record.get("lot_number")),
+                    "make": truncate_string(sales_record.get("make")),
+                    "model": truncate_string(sales_record.get("model")),
+                    "year": self._parse_year(sales_record.get("year")),
+                    "grade": truncate_string(sales_record.get("grade")),
+                    "model_type": truncate_string(sales_record.get("model_type")),
+                    "mileage": self._parse_mileage(sales_record.get("mileage")),
+                    "displacement": truncate_string(sales_record.get("displacement")),
+                    "transmission": truncate_string(sales_record.get("transmission")),
+                    "color": truncate_string(sales_record.get("color")),
+                    "auction": truncate_string(sales_record.get("auction")),
+                    "sale_date": self._parse_date(sales_record.get("sale_date")),
+                    "end_price": self._parse_price(sales_record.get("end_price")),
+                    "result": truncate_string(sales_record.get("result")),
+                    "scores": truncate_string(sales_record.get("scores")),
+                    "lot_link": truncate_string(sales_record.get("lot_link")),
+                    "search_date": datetime.now().isoformat(),
+                    "created_at": datetime.now().isoformat(),
+                    "last_updated": datetime.now().isoformat()
+                }
+                
+                # Remove None values to avoid database errors
+                vehicle_sales_data = {k: v for k, v in vehicle_sales_data.items() if v is not None}
+                vehicle_sales_batch.append(vehicle_sales_data)
+                
+                # Prepare processed_urls data
+                if sales_record.get("lot_link"):
+                    processed_url_data = {
+                        "url": truncate_string(sales_record.get("lot_link")),
+                        "site_name": truncate_string(sales_record.get("site_name")),
+                        "lot_number": truncate_string(sales_record.get("lot_number")),
+                        "status": "completed",
+                        "processed_at": datetime.now().isoformat(),
+                        "created_at": datetime.now().isoformat(),
+                        "error_message": None
+                    }
+                    processed_url_data = {k: v for k, v in processed_url_data.items() if v is not None}
+                    processed_urls_batch.append(processed_url_data)
+            
+            # Batch insert into vehicle_sales table
+            if vehicle_sales_batch:
+                result = self.supabase_client.table("vehicle_sales").upsert(
+                    vehicle_sales_batch, 
+                    on_conflict="site_name,lot_number"
+                ).execute()
+                
+                if not result.data:
+                    self.logger.error("Failed to batch insert vehicle_sales records")
+                    return False
+            
+            # Batch insert into processed_sales_urls table
+            if processed_urls_batch:
+                result = self.supabase_client.table("processed_sales_urls").upsert(
+                    processed_urls_batch,
+                    on_conflict="url"
+                ).execute()
+                
+                if not result.data:
+                    self.logger.error("Failed to batch insert processed_sales_urls records")
+                    return False
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"Error saving sales data batch: {e}")
+            return False
+
     async def save_sales_data(self, sales_record: Dict) -> bool:
         """
         Save a single sales data record to the vehicle_sales table and track the URL in processed_sales_urls.
@@ -662,7 +757,6 @@ class DatabaseHandler:
                 "end_price": self._parse_price(sales_record.get("end_price")),
                 "result": truncate_string(sales_record.get("result")),
                 "scores": truncate_string(sales_record.get("scores")),
-                "url": truncate_string(sales_record.get("url")),
                 "lot_link": truncate_string(sales_record.get("lot_link")),
                 "search_date": datetime.now().isoformat(),
                 "created_at": datetime.now().isoformat(),
@@ -688,10 +782,10 @@ class DatabaseHandler:
                     return False
                 vehicle_sales_id = result.data[0]["id"]
             
-            # Save the URL to processed_sales_urls table for tracking (1-to-1 relationship)
-            if sales_record.get("url"):
+            # Save the lot_link to processed_sales_urls table for tracking (1-to-1 relationship)
+            if sales_record.get("lot_link"):
                 processed_url_data = {
-                    "url": truncate_string(sales_record.get("url")),
+                    "url": truncate_string(sales_record.get("lot_link")),
                     "site_name": truncate_string(sales_record.get("site_name")),
                     "lot_number": truncate_string(sales_record.get("lot_number")),
                     "status": "completed",

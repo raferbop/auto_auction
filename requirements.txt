@@ -1,20 +1,4 @@
-# Auto Auction Data Collection System Dependencies
-
-# Database
-supabase>=1.0.0
-psycopg2-binary>=2.9.0
-
-# Web Scraping
-playwright>=1.30.0
-requests>=2.28.0
-
-# Data Processing
-pandas>=1.5.0
-numpy>=1.24.0
-
-# Utilities
-python-dotenv>=0.19.0
-asyncio>=3.4.3
-
-# Logging
-colorlog>=6.7.0
+playwright>=1.0.0
+supabase>=2.0.0
+aiohttp>=3.0.0
+python-dotenv>=0.21.0
