@@ -53,6 +53,28 @@ def setup_logging():
 log_filename = setup_logging()
 logger = logging.getLogger(__name__)
 
+# Custom print function that also logs to file
+def log_print(message, level="INFO"):
+    """Print message to console and log to file"""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    formatted_message = f"[{timestamp}] {message}"
+    
+    # Print to console (for immediate visibility)
+    print(formatted_message)
+    
+    # Log to file (for Task Scheduler monitoring)
+    if level.upper() == "ERROR":
+        logger.error(message)
+    elif level.upper() == "WARNING":
+        logger.warning(message)
+    elif level.upper() == "DEBUG":
+        logger.debug(message)
+    else:
+        logger.info(message)
+    
+    # Force flush to ensure immediate writing
+    sys.stdout.flush()
+
 # === AGE CALCULATION FUNCTION ===
 def calculate_min_year_for_vehicle(make: str, model: str) -> int:
     """
@@ -1294,75 +1316,72 @@ async def login_to_site(page: Page, site_name: str, site_config: dict) -> bool:
 
 async def main():
     start_time = datetime.now()
-    logger.info("="*60)
-    logger.info("SALES DATA EXTRACTION - STEP 5: ADVANCED FILTERS")
-    logger.info("="*60)
-    logger.info(f"Log file: {log_filename}")
     
-    print(f"\n{'='*60}")
-    print("SALES DATA EXTRACTION - STEP 5: ADVANCED FILTERS")
-    print(f"{'='*60}")
+    # Log startup information
+    log_print("="*60)
+    log_print("SALES DATA EXTRACTION - STEP 5: ADVANCED FILTERS")
+    log_print("="*60)
+    log_print(f"Log file: {log_filename}")
+    log_print(f"Start time: {start_time}")
+    log_print(f"Python version: {sys.version}")
+    log_print(f"Working directory: {os.getcwd()}")
     
     try:
         # Initialize the pooling system
-        logger.info("Initializing pooling system")
+        log_print("Initializing pooling system")
         pool = RoundRobinPool(auction_sites, manufacturer_configs)
         
         # Distribute workload across sites
-        logger.info("Distributing workload across sites")
+        log_print("Distributing workload across sites")
         workloads = pool.distribute_workload()
         
         # Log the site distribution for debugging
-        logger.info("Site workload distribution:")
+        log_print("Site workload distribution:")
         for site_name, site_workload in workloads.items():
-            logger.info(f"  {site_name}: {len(site_workload)} combinations")
+            log_print(f"  {site_name}: {len(site_workload)} combinations")
             if site_workload:
                 first_make = site_workload[0][0] if site_workload else "N/A"
                 last_make = site_workload[-1][0] if site_workload else "N/A"
-                logger.info(f"    {site_name}: First make={first_make}, Last make={last_make}")
+                log_print(f"    {site_name}: First make={first_make}, Last make={last_make}")
         
-        logger.info("Launching concurrent processing with advanced filters")
-        print(f"\n🚀 Launching concurrent processing with advanced filters...")
-        print(f"📅 Filters: Year (Jamaica age limits), Scores (4, 4.5, 5, 6), Result (Sold)")
-        print(f"🔄 True round-robin distribution enabled")
+        log_print("🚀 Launching concurrent processing with advanced filters...")
+        log_print("📅 Filters: Year (Jamaica age limits), Scores (4, 4.5, 5, 6), Result (Sold)")
+        log_print("🔄 True round-robin distribution enabled")
         
         # Create tasks for each site with its assigned workload
         tasks = []
         for site_name, site_config in auction_sites.items():
             site_workload = workloads[site_name]
-            logger.info(f"Creating task for {site_name} with {len(site_workload)} combinations")
+            log_print(f"Creating task for {site_name} with {len(site_workload)} combinations")
             task = asyncio.create_task(
                 process_site_workload(site_name, site_config, site_workload)
             )
             tasks.append(task)
         
         # Wait for all tasks to complete
-        logger.info(f"Starting {len(tasks)} concurrent tasks")
+        log_print(f"Starting {len(tasks)} concurrent tasks")
         await asyncio.gather(*tasks)
         
         end_time = datetime.now()
         duration = end_time - start_time
-        logger.info(f"All sites processed successfully in {duration}")
-        print(f"\n{'='*60}")
-        print("✅ All sites processed with advanced filters!")
-        print(f"{'='*60}")
+        log_print(f"All sites processed successfully in {duration}")
+        log_print("="*60)
+        log_print("✅ All sites processed with advanced filters!")
+        log_print("="*60)
         
     except Exception as e:
-        logger.error(f"Critical error in main function: {e}")
-        logger.error(traceback.format_exc())
-        print(f"❌ Critical error: {e}")
+        log_print(f"Critical error in main function: {e}", "ERROR")
+        log_print(traceback.format_exc(), "ERROR")
         raise
 
 if __name__ == "__main__":
     try:
-        logger.info("Starting get_sales_data.py script")
+        log_print("Starting get_sales_data.py script")
         asyncio.run(main())
-        logger.info("get_sales_data.py script completed successfully")
+        log_print("get_sales_data.py script completed successfully")
     except KeyboardInterrupt:
-        logger.warning("Script interrupted by user")
-        print("\nScript interrupted by user")
+        log_print("Script interrupted by user", "WARNING")
     except Exception as e:
-        logger.error(f"Script failed with error: {e}")
-        logger.error(traceback.format_exc())
-        print(f"Script failed: {e}")
+        log_print(f"Script failed with error: {e}", "ERROR")
+        log_print(traceback.format_exc(), "ERROR")
         sys.exit(1) 
