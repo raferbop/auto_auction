@@ -304,11 +304,33 @@ async def extract_sales_data_from_results(page: Page, debug_msgs=None, session_n
             # Wait a bit for DOM to update
             await asyncio.sleep(0.5)  # Reduced from 1 second
             
-            # Check total rows on current page
-            total_rows = await page.evaluate("""
-                document.querySelectorAll('#mainTable tr[id^=\"cell_\"]').length
+            # Enhanced table row counting with debugging
+            table_debug = await page.evaluate("""
+                () => {
+                    const table = document.getElementById('mainTable');
+                    if (!table) return { error: 'No mainTable found' };
+                    
+                    const allRows = table.querySelectorAll('tr');
+                    const cellRows = table.querySelectorAll('tr[id^="cell_"]');
+                    const visibleRows = table.querySelectorAll('tr[id^="cell_"]:not([style*="display: none"])');
+                    const hiddenRows = table.querySelectorAll('tr[id^="cell_"]:not([style*="display: none"])');
+                    
+                    return {
+                        totalRows: allRows.length,
+                        cellRows: cellRows.length,
+                        visibleCellRows: visibleRows.length,
+                        hiddenCellRows: hiddenRows.length,
+                        tableExists: true,
+                        rowIds: Array.from(cellRows).map(row => row.id).slice(0, 10) // First 10 row IDs
+                    };
+                }
             """)
-            log(f"Page {page_num}: Total data rows found: {total_rows}")
+            
+            log(f"Page {page_num}: Table debug - Total rows: {table_debug.get('totalRows', 'N/A')}, Cell rows: {table_debug.get('cellRows', 'N/A')}, Visible: {table_debug.get('visibleCellRows', 'N/A')}")
+            if table_debug.get('rowIds'):
+                log(f"Page {page_num}: Sample row IDs: {table_debug['rowIds']}")
+            
+            total_rows = table_debug.get('cellRows', 0)
             
             # Debug: Log when we find data
             if total_rows > 0 and session_name:
@@ -320,8 +342,36 @@ async def extract_sales_data_from_results(page: Page, debug_msgs=None, session_n
                 log(f"Page {page_num}: No data rows found, stopping pagination")
                 break
             
-            # Extract data from current page
+            # Enhanced row selection with debugging
             rows = await page.query_selector_all('#mainTable tr[id^="cell_"]')
+            
+            # Additional debugging for row selection
+            if page_num >= 19:  # Debug pages 19+ to see what's different
+                row_debug = await page.evaluate("""
+                    () => {
+                        const table = document.getElementById('mainTable');
+                        if (!table) return { error: 'No table' };
+                        
+                        const allRows = Array.from(table.querySelectorAll('tr'));
+                        const rowInfo = allRows.map((row, index) => ({
+                            index: index,
+                            id: row.id,
+                            className: row.className,
+                            style: row.style.display,
+                            hasCells: row.querySelectorAll('td').length,
+                            firstCellText: row.querySelector('td') ? row.querySelector('td').textContent.trim().substring(0, 20) : 'No cells'
+                        })).filter(row => row.id && row.id.startsWith('cell_'));
+                        
+                        return {
+                            totalRows: allRows.length,
+                            cellRows: rowInfo.length,
+                            sampleRows: rowInfo.slice(0, 5)
+                        };
+                    }
+                """)
+                log(f"Page {page_num}: Row debug - Total: {row_debug.get('totalRows', 'N/A')}, Cell rows: {row_debug.get('cellRows', 'N/A')}")
+                if row_debug.get('sampleRows'):
+                    log(f"Page {page_num}: Sample rows: {row_debug['sampleRows']}")
             page_results = []
             for i, row in enumerate(rows, start=1):
                 try:
@@ -415,59 +465,326 @@ async def extract_sales_data_from_results(page: Page, debug_msgs=None, session_n
             # )
             # log(f"Page {page_num}: Pagination text: {page_text}")
             
-            # Check for next page using the specific pagination structure
-            next_page_exists = await page.evaluate(
-                """(currentPage) => {
-                    const nextButtons = document.querySelectorAll('a');
-                    for (const btn of nextButtons) {
-                        const text = btn.textContent || '';
+            # Enhanced debugging for pagination with smart page detection
+            pagination_debug = await page.evaluate(
+                f"""() => {{
+                    const currentPage = {page_num};
+                    const allLinks = document.querySelectorAll('a');
+                    const paginationInfo = {{
+                        nextPageExists: false,
+                        nextPageNumber: null,
+                        allPageNumbers: [],
+                        allLinkTexts: [],
+                        nextButtons: [],
+                        sequentialNextExists: false,
+                        sequentialNextButton: null,
+                        hasNextArrow: false,
+                        nextArrowButton: null,
+                        hasLastPageArrow: false,
+                        lastPageArrowButton: null,
+                        maxVisiblePage: 0,
+                        paginationType: 'unknown'
+                    }};
+                    
+                    // First pass: Collect all visible page numbers
+                    for (const link of allLinks) {{
+                        const text = (link.textContent || '').trim();
+                        const href = link.getAttribute('href') || '';
                         const pageNum = parseInt(text, 10);
-                        if (!isNaN(pageNum) && pageNum > currentPage) {
-                            return true;
-                        }
-                    }
-                    return false;
-                }""",
-                page_num
+                        
+                        if (!isNaN(pageNum)) {{
+                            paginationInfo.allPageNumbers.push(pageNum);
+                            if (pageNum > paginationInfo.maxVisiblePage) {{
+                                paginationInfo.maxVisiblePage = pageNum;
+                            }}
+                            
+                            // PRIORITY: Look for sequential next page (currentPage + 1)
+                            if (pageNum === currentPage + 1) {{
+                                paginationInfo.sequentialNextExists = true;
+                                paginationInfo.nextPageExists = true;
+                                paginationInfo.nextPageNumber = pageNum;
+                                paginationInfo.sequentialNextButton = {{
+                                    text: text,
+                                    href: href,
+                                    pageNum: pageNum,
+                                    type: 'sequential'
+                                }};
+                                paginationInfo.nextButtons.push(paginationInfo.sequentialNextButton);
+                            }}
+                        }}
+                        
+                        // Check for navigation arrows
+                        if (text === '>>' || text === '»') {{
+                            paginationInfo.hasNextArrow = true;
+                            paginationInfo.nextPageExists = true;
+                            paginationInfo.nextPageNumber = currentPage + 1;
+                            paginationInfo.nextArrowButton = {{
+                                text: text,
+                                href: href,
+                                pageNum: currentPage + 1,
+                                type: 'next_arrow'
+                            }};
+                            paginationInfo.nextButtons.push(paginationInfo.nextArrowButton);
+                        }}
+                        
+                        if (text === '>>>' || text === '»»') {{
+                            paginationInfo.hasLastPageArrow = true;
+                            paginationInfo.lastPageArrowButton = {{
+                                text: text,
+                                href: href,
+                                type: 'last_page_arrow'
+                            }};
+                        }}
+                        
+                        // Collect all link texts for debugging
+                        if (text && text.length < 20) {{
+                            paginationInfo.allLinkTexts.push(text);
+                        }}
+                    }}
+                    
+                    // Determine pagination type
+                    if (paginationInfo.sequentialNextExists) {{
+                        paginationInfo.paginationType = 'sequential';
+                    }} else if (paginationInfo.hasNextArrow) {{
+                        paginationInfo.paginationType = 'arrow_navigation';
+                    }} else if (paginationInfo.maxVisiblePage > 0) {{
+                        paginationInfo.paginationType = 'truncated';
+                    }} else {{
+                        paginationInfo.paginationType = 'none';
+                    }}
+                    
+                    return paginationInfo;
+                }}"""
             )
-            log(f"Page {page_num}: Next page exists: {next_page_exists}")
+            
+            # Enhanced pagination logging with detailed detection
+            log(f"Page {page_num}: Pagination type: {pagination_debug['paginationType']}")
+            log(f"Page {page_num}: Visible pages: {pagination_debug['allPageNumbers']}")
+            log(f"Page {page_num}: Max visible page: {pagination_debug['maxVisiblePage']}")
+            log(f"Page {page_num}: Available buttons: {pagination_debug['allLinkTexts']}")
+            
+            if pagination_debug['sequentialNextExists']:
+                log(f"Page {page_num}: ✅ Sequential next page {pagination_debug['nextPageNumber']} found")
+            elif pagination_debug['hasNextArrow']:
+                log(f"Page {page_num}: ✅ Next arrow (>>) found for page {pagination_debug['nextPageNumber']}")
+            elif pagination_debug['hasLastPageArrow']:
+                log(f"Page {page_num}: ⚠️ Only last page arrow (>>>) found - this might be the end")
+                # Try clicking the last page arrow to see what's there
+                log(f"Page {page_num}: 🔍 Clicking last page arrow to explore...")
+                
+                # Click the last page arrow to see what the final page is
+                last_page_click = await page.evaluate("""
+                    () => {
+                        const allButtons = document.querySelectorAll('a');
+                        for (const btn of allButtons) {
+                            const text = btn.textContent && btn.textContent.trim();
+                            if (text === '>>>' || text === '»»') {
+                                btn.click();
+                                return { clicked: true, text: text };
+                            }
+                        }
+                        return { clicked: false };
+                    }
+                """)
+                
+                if last_page_click['clicked']:
+                    log(f"Page {page_num}: ✅ Clicked last page arrow ({last_page_click['text']})")
+                    # Wait for the last page to load
+                    await page.wait_for_load_state('networkidle', timeout=10000)
+                    await asyncio.sleep(2)
+                    
+                    # Check what page we're on now
+                    final_page_check = await page.evaluate("""
+                        () => {
+                            const allLinks = document.querySelectorAll('a');
+                            const pageNumbers = [];
+                            for (const link of allLinks) {
+                                const text = (link.textContent || '').trim();
+                                const pageNum = parseInt(text, 10);
+                                if (!isNaN(pageNum)) {
+                                    pageNumbers.push(pageNum);
+                                }
+                            }
+                            return {
+                                pageNumbers: pageNumbers,
+                                maxPage: Math.max(...pageNumbers, 0),
+                                currentUrl: window.location.href
+                            };
+                        }
+                    """)
+                    
+                    log(f"Page {page_num}: 🔍 Final page exploration - Available pages: {final_page_check['pageNumbers']}")
+                    log(f"Page {page_num}: 🔍 Final page exploration - Max page: {final_page_check['maxPage']}")
+                    log(f"Page {page_num}: 🔍 Final page exploration - URL: {final_page_check['currentUrl']}")
+                    
+                    # If we found a higher page number, we can continue
+                    if final_page_check['maxPage'] > page_num:
+                        log(f"Page {page_num}: ✅ Found higher page {final_page_check['maxPage']} - continuing pagination")
+                        # Navigate back to the original page
+                        await page.go_back()
+                        await asyncio.sleep(2)
+                        
+                        # Now we know there are more pages, so we should use the >> button
+                        log(f"Page {page_num}: 🔄 Using >> button to navigate to page {page_num + 1}")
+                        # Set up the pagination to use the next arrow
+                        pagination_debug['nextPageExists'] = True
+                        pagination_debug['nextPageNumber'] = page_num + 1
+                        pagination_debug['hasNextArrow'] = True
+                        pagination_debug['nextArrowButton'] = {
+                            'text': '>>',
+                            'href': 'javascript:page(' + (page_num + 1) + ')',
+                            'pageNum': page_num + 1,
+                            'type': 'next_arrow'
+                        }
+                    else:
+                        log(f"Page {page_num}: ❌ No higher pages found - stopping pagination")
+                        break
+                else:
+                    log(f"Page {page_num}: ❌ Failed to click last page arrow")
+                    break
+            else:
+                log(f"Page {page_num}: ❌ No next page found - stopping pagination")
+                break
+            
+            next_page_exists = pagination_debug['nextPageExists']
             
             if not next_page_exists:
                 log(f"No next page found, stopping pagination at page {page_num}")
                 break
             
-            # Try to click next page using the specific pagination structure
-            next_clicked = await page.evaluate(
-                """(currentPage) => {
-                    // Only click the button whose text is exactly currentPage + 1
-                    const nextButtons = document.querySelectorAll('a');
-                    const nextPageNum = (currentPage + 1).toString();
-                    for (const btn of nextButtons) {
+            # Enhanced sequential next page clicking with arrow support
+            click_debug = await page.evaluate(
+                f"""() => {{
+                    const currentPage = {page_num};
+                    const targetPageNum = currentPage + 1;  // ALWAYS sequential
+                    const allButtons = document.querySelectorAll('a');
+                    const clickInfo = {{
+                        targetPageNumber: targetPageNum,
+                        clicked: false,
+                        buttonFound: null
+                    }};
+                    
+                    // First: Look for sequential next page (currentPage + 1)
+                    for (const btn of allButtons) {{
                         const text = btn.textContent && btn.textContent.trim();
-                        if (text === nextPageNum) {
+                        const href = btn.getAttribute('href') || '';
+                        const pageNum = parseInt(text, 10);
+                        
+                        if (pageNum === targetPageNum) {{
+                            clickInfo.buttonFound = {{
+                                text: text,
+                                href: href,
+                                pageNum: pageNum,
+                                type: 'sequential'
+                            }};
                             btn.click();
-                            return true;
-                        }
-                    }
-                    // No next page found
-                    return false;
-                }""",
-                page_num
+                            clickInfo.clicked = true;
+                            break;
+                        }}
+                    }}
+                    
+                    // Second: If no sequential found, look for next arrow (>>, »)
+                    if (!clickInfo.clicked) {{
+                        for (const btn of allButtons) {{
+                            const text = btn.textContent && btn.textContent.trim();
+                            const href = btn.getAttribute('href') || '';
+                            
+                            if (text === '>>' || text === '»') {{
+                                clickInfo.buttonFound = {{
+                                    text: text,
+                                    href: href,
+                                    pageNum: targetPageNum,
+                                    type: 'next_arrow'
+                                }};
+                                btn.click();
+                                clickInfo.clicked = true;
+                                break;
+                            }}
+                        }}
+                    }}
+                    
+                    return clickInfo;
+                }}"""
             )
-            log(f"Page {page_num}: Next page clicked: {next_clicked}")
+            
+            # Simplified click logging
+            if click_debug['clicked']:
+                log(f"Page {page_num}: ✅ Clicked page {click_debug['targetPageNumber']}")
+            else:
+                log(f"Page {page_num}: ❌ Failed to click page {click_debug['targetPageNumber']}")
+            
+            next_clicked = click_debug['clicked']
             
             if not next_clicked:
                 log(f"Could not click next page button, stopping pagination at page {page_num}")
                 break
             
-            # Wait for page to load
-            try:
-                await page.wait_for_load_state('networkidle', timeout=10000)
-                await asyncio.sleep(1)  # Reduced from 3 seconds
-                # Wait for the results table to be visible again
-                await page.wait_for_selector('#mainTable', timeout=10000)
-            except Exception as e:
-                log(f"Page {page_num + 1} load timeout: {e}, stopping pagination")
+            # Enhanced page loading with retry logic and progressive delays
+            max_retries = 3
+            retry_count = 0
+            page_loaded = False
+            
+            # Progressive delay based on page number to avoid rate limiting
+            base_delay = 1
+            if page_num >= 10:
+                base_delay = 2
+            if page_num >= 15:
+                base_delay = 3
+            if page_num >= 20:
+                base_delay = 4
+            
+            # Progressive delay based on page number to avoid rate limiting
+            base_delay = 1
+            if page_num >= 10:
+                base_delay = 2
+            if page_num >= 15:
+                base_delay = 3
+            if page_num >= 20:
+                base_delay = 4
+            
+            while retry_count < max_retries and not page_loaded:
+                try:
+                    if retry_count > 0:
+                        log(f"Page {page_num}: 🔄 Retry {retry_count}/{max_retries}...")
+                    
+                    # Wait for page load with progressive delays
+                    await page.wait_for_load_state('networkidle', timeout=15000)
+                    await asyncio.sleep(base_delay)
+                    
+                    # Wait for table and verify data
+                    await page.wait_for_selector('#mainTable', timeout=15000)
+                    table_check = await page.evaluate("""
+                        () => {
+                            const table = document.getElementById('mainTable');
+                            if (!table) return 0;
+                            const rows = table.querySelectorAll('tr[id^="cell_"]');
+                            return rows.length;
+                        }
+                    """)
+                    
+                    page_loaded = True
+                    log(f"Page {page_num}: ✅ Loaded page {page_num + 1} ({table_check} records)")
+                    
+                except Exception as e:
+                    retry_count += 1
+                    
+                    if retry_count < max_retries:
+                        retry_delay = base_delay * 2
+                        log(f"Page {page_num}: ⏳ Retrying in {retry_delay}s...")
+                        await asyncio.sleep(retry_delay)
+                        
+                        if "timeout" in str(e).lower():
+                            try:
+                                await page.reload()
+                                await asyncio.sleep(2)
+                            except:
+                                pass
+                    else:
+                        log(f"Page {page_num}: ❌ Failed after {max_retries} attempts")
+                        break
+            
+            if not page_loaded:
+                log(f"Page {page_num}: ❌ Failed to load page {page_num + 1} after {max_retries} attempts")
                 break
             
             page_num += 1
@@ -476,8 +793,44 @@ async def extract_sales_data_from_results(page: Page, debug_msgs=None, session_n
             if page_num > 50:
                 log(f"Reached maximum page limit (50), stopping pagination")
                 break
+            
+            # Check for session timeout every 10 pages and specifically at page 15
+            if page_num % 10 == 0 or page_num == 15:
+                try:
+                    session_check = await page.evaluate("""
+                        () => {
+                            const logoutLink = document.querySelector('a[href*="logout"]');
+                            const loginLink = document.querySelector('a[href*="login"]');
+                            return !!logoutLink && !loginLink;
+                        }
+                    """)
+                    
+                    if not session_check:
+                        log(f"Page {page_num}: 🔄 Re-logging in...")
+                        login_success = await login_to_site(page, site_name, site_config)
+                        if login_success:
+                            log(f"Page {page_num}: ✅ Re-login successful")
+                            await page.goto(current_url)
+                            await asyncio.sleep(3)
+                        else:
+                            log(f"Page {page_num}: ❌ Re-login failed")
+                            break
+                        
+                except Exception as session_error:
+                    pass  # Continue anyway
         
         log(f"✅ Pagination complete: Processed {page_num} pages, extracted {len(all_results)} total records")
+        
+        # Summary debugging
+        if session_name:
+            logger.info(f"{session_name} - Pagination Summary: {page_num} pages processed, {len(all_results)} records extracted")
+            if page_num < 20:  # If we stopped early, log potential issues
+                logger.warning(f"{session_name} - Pagination stopped early at page {page_num}. Possible reasons:")
+                logger.warning(f"{session_name} - 1. Network timeout during page load")
+                logger.warning(f"{session_name} - 2. No more pagination buttons found")
+                logger.warning(f"{session_name} - 3. Site rate limiting or session timeout")
+                logger.warning(f"{session_name} - 4. Maximum page limit reached")
+        
         return all_results
         
     except Exception as e:
@@ -540,7 +893,7 @@ async def process_site_workload_parallel(site_name: str, site_config: dict, work
     print(f"  📊 {site_name}: Final - Saved: {total_saved}, Failed: {total_failed}")
     print(f"✅ {site_name}: Done")
 
-async def process_site_session(site_name: str, site_config: dict, workload_chunk: List[Tuple[str, str, str]], session_name: str):
+async def process_site_session(site_name: str, site_config: dict, workload_chunk: List[Tuple[str, str, str]], session_name: str, headless: bool = True):
     """
     Process a chunk of workload using a single browser session.
     """
@@ -552,7 +905,7 @@ async def process_site_session(site_name: str, site_config: dict, workload_chunk
     
     try:
         playwright = await async_playwright().start()
-        browser = await playwright.chromium.launch(headless=True)
+        browser = await playwright.chromium.launch(headless=headless)
         db_handler = get_database_handler()
         
         context = await browser.new_context()

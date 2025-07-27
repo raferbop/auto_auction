@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test script for get_sales_data extraction: Toyota Prius only
+Test script for get_sales_data extraction: Toyota Aqua only
 """
 import asyncio
 import sys
@@ -10,61 +10,64 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from src.core.config import auction_sites, manufacturer_configs
-from playwright.async_api import async_playwright, Page
-from src.extraction.get_sales_data import extract_sales_data_from_results, set_session_filters, get_dropdown_options, find_best_match, calculate_min_year_for_vehicle, fill_search_form_with_filters, login_to_site
+from src.extraction.get_sales_data import process_site_session
 
-async def test_extract_toyota_prius():
-    # Get Toyota Prius from manufacturers config
+async def test_extract_toyota_aqua():
+    # Get Toyota Aqua from manufacturers config
     toyota_config = manufacturer_configs.get("TOYOTA", {})
     
-    # Find Prius in the config (it's stored as a key, not in a models list)
-    prius_model = None
+    # Find Aqua in the config (it's stored as a key, not in a models list)
+    aqua_model = None
     for model_name in toyota_config.keys():
-        if "PRIUS" in model_name.upper():
-            prius_model = model_name
+        if "AQUA" in model_name.upper():
+            aqua_model = model_name
             break
     
-    if not prius_model:
-        print("❌ Toyota Prius not found in manufacturers config")
+    if not aqua_model:
+        print("❌ Toyota Aqua not found in manufacturers config")
+        print("Available Toyota models:")
+        for model_name in toyota_config.keys():
+            print(f"  - {model_name}")
         return
     
     site_name = list(auction_sites.keys())[0]  # Test with the first site
     site_config = auction_sites[site_name]
     make = "TOYOTA"
-    model = prius_model
+    model = aqua_model
     description = f"{make} {model}"
     print(f"Testing extraction for {description} on {site_name}")
-    print(f"Found in config: {prius_model}")
+    print(f"Found in config: {aqua_model}")
     
-    playwright = await async_playwright().start()
-    browser = await playwright.chromium.launch(headless=False)
+    # Create a workload with just Toyota Aqua
+    workload = [(make, model, description)]
+    
+    # Use the existing process_site_session function which handles everything
+    # including database saving
+    print(f"Starting extraction process...")
     try:
-        context = await browser.new_context()
-        page = await context.new_page()
-        login_success = await login_to_site(page, site_name, site_config)
-        if not login_success:
-            print(f"❌ Login failed for {site_name}")
-            return
-        await set_session_filters(page)
-        form_success, sales_count, debug_msgs = await fill_search_form_with_filters(page, make, model)
-        if not form_success:
-            print(f"❌ Search form failed for {description}")
-            for msg in debug_msgs:
-                print(f"  ⚠️ {msg}")
-            return
-        print(f"✅ Search complete, {sales_count} records found for {description}")
-        sales_data = await extract_sales_data_from_results(page, debug_msgs)
-        # Print debug messages for pagination and extraction
-        print("\n--- DEBUG MESSAGES ---")
-        for msg in debug_msgs:
-            print(msg)
-        print("--- END DEBUG ---\n")
-        print(f"Total vehicles extracted: {len(sales_data)}")
-        await page.close()
-        await context.close()
-    finally:
-        await browser.close()
-        await playwright.stop()
+        saved_count, failed_count = await process_site_session(
+            site_name=site_name,
+            site_config=site_config,
+            workload_chunk=workload,
+            session_name="Test-Session",
+            headless=False  # Show browser to verify page navigation
+        )
+        
+        print(f"\n--- FINAL RESULTS ---")
+        print(f"✅ Successfully saved: {saved_count} records")
+        print(f"❌ Failed to save: {failed_count} records")
+        print(f"Total processed: {saved_count + failed_count}")
+        
+        # Additional verification
+        if saved_count > 0:
+            print(f"🎉 Test PASSED: {saved_count} records saved successfully!")
+        else:
+            print(f"⚠️ Test WARNING: No records were saved")
+            
+    except Exception as e:
+        print(f"❌ Test FAILED with error: {e}")
+        import traceback
+        traceback.print_exc()
 
 if __name__ == "__main__":
-    asyncio.run(test_extract_toyota_prius()) 
+    asyncio.run(test_extract_toyota_aqua()) 
